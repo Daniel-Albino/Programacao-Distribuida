@@ -1,0 +1,48 @@
+SOCKETS JAVA
+5. Desenvolva uma aplicação cliente/servidor em Java, baseada no protocolo UDP, compatível com
+a versão Win32 realizada no exercício 1.
+6. Desenvolva uma aplicação cliente/servidor em Java, baseada no protocolo UDP, que permita
+obter um ficheiro armazenado no servidor. A aplicação cliente deve ser lançada passando na
+linha de comando a localização do servidor, o nome do ficheiro pretendido e a diretoria local
+onde a cópia obtida deve ser armazenada. O servidor deve ser lançado passando, na linha de
+comando, o porto de escuta e a diretoria local onde se encontram os ficheiros suscetíveis de
+serem carregados pelos clientes. O servidor deve apenas permitir o acesso a ficheiros localizados
+na diretoria indicada ou subdiretorias. Deve ser possível transferir ficheiros com qualquer
+dimensão. Para o efeito, defina um tamanho máximo para os blocos transferidos (por exemplo,
+MAX_DATA = 4000 bytes), correspondendo o último bloco de um ficheiro a um datagrama UDP
+com conteúdo de tamanho igual a zero bytes. O cliente começa por enviar ao servidor um
+datagrama com conteúdo correspondente ao nome do ficheiro pretendido. Qualquer problema
+que surja durante a transferência de um ficheiro, incluindo situações de timeout, leva a que esta
+seja abortada.
+7. Desenvolva uma aplicação cliente/servidor em Java, baseada no protocolo TCP, compatível com
+a versão Win32 realizada no exercício 2.
+8. Desenvolva uma aplicação cliente/servidor em Java, baseada no protocolo TCP, com
+funcionalidades semelhantes às da aplicação realizada no âmbito do exercício 6. Neste caso, o
+servidor assinala a conclusão de transferência de um ficheiro encerrando a respetiva ligação
+TCP.
+9. Altere as aplicações cliente/servidor UDP e TCP desenvolvidas nos exercícios 5, 6, 7 e 8 de modo
+a que sejam trocados objetos serializados (do tipo String) em vez de cadeias de caracteres.
+Analise o tráfego gerado e compare-o com aquele que é gerado recorrendo às versões originais.
+10. Transforme os servidores TCP desenvolvidos em Java, no âmbito dos exercícios 7 e 8, em
+servidores concorrentes.
+11. Desenvolva, na linguagem Java, uma aplicação (peer-to-peer) elementar que permita a troca de
+mensagens no seio de um grupo de utilizadores através da utilização de endereços IP do tipo
+multicast (i.e., pertencentes à classe D). As aplicações são lançadas passando, na linha de
+comando, o nome do utilizador, o endereço de grupo e o porto de escuta pretendidos. Estas
+ficam continuamente à espera de mensagens introduzidas na entrada standard, as quais são
+enviadas para o grupo de conversa, e de mensagens recebidas via rede, as quais são mostradas
+na saída standard. As mensagens são trocadas sob a forma de cadeias de caracteres. Uma
+mensagem recebida com a sequência “LIST” faz com que a aplicação reenvie o nome do
+utilizador local à origem.
+12. Altere a aplicação desenvolvida no âmbito da pergunta anterior de modo a que sejam trocadas
+instância da classe Msg, sendo esta constituída pelos atributos protected String nickname e
+protected String msg, bem como pelos métodos public Msg(String nickname, String msg), public
+String getNickname() e public String getMsg(). A resposta a uma sequência de caracteres “LIST”
+é dada através de um objeto serializado to tipo String.
+13. Desenvolva, na linguagem Java, um servidor TCP concorrente do tipo proxy, ou seja, que faça a
+ponte entre clientes TCP e um servidor TCP específico. A localização deste último é fornecida ao
+proxy através da linha de comando.
+14. Desenvolva, na linguagem Java, uma aplicação cliente/servidor TCP que permita usar uma rede
+de computadores para calcular o valor de  por integração numérica de um modo paralelo. Na
+equação seguinte, n corresponde ao número de intervalos e xi à abcissa do centro do i-ésimo
+intervalo.
